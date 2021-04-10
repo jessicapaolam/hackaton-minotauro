@@ -61,6 +61,14 @@ body {
     display: block;
 }
 
+.container-niveis {
+    position: fixed; 
+    z-index: 2; 
+    top: 0;
+    margin-top: 15px;
+    margin-left: 43%;
+}
+
 /* css portas */
 .porta-bordas {
     background-color: #4565cc;
@@ -74,9 +82,13 @@ div.porta-bordas i {
 }
 
 .fa-user {
-    color: #45dd98;
+    color: #01a2e8;
 }
 
 .fa-simplybuilt {
     color: #cf0202;
+}
+
+.fa-flag-checkered {
+    color: #45dd98;
 }
