@@ -131,6 +131,7 @@ function salasBloqueadas()
         if (opcoes.length == 0) continue;
 
         const selecionado = opcoes[parseInt(Math.random() * opcoes.length)];
+        console.log('bloqueados', bloqueados[random], opcoes, selecionado);
         labirinto[bloqueados[random].x][bloqueados[random].y][selecionado] = true;
 
         switch (selecionado)
@@ -140,9 +141,9 @@ function salasBloqueadas()
             case 'right':
                 labirinto[bloqueados[random].x + 1][bloqueados[random].y].left = true; break;
             case 'top':
-                labirinto[bloqueados[random].y - 1][bloqueados[random].y].bottom = true; break;
+                labirinto[bloqueados[random].x][bloqueados[random].y - 1].bottom = true; break;
             case 'bottom':
-                labirinto[bloqueados[random].y + 1][bloqueados[random].y].top = true; break;
+                labirinto[bloqueados[random].x][bloqueados[random].y + 1].top = true; break;
         }
 
         bloqueados.splice(random, 1);
@@ -238,6 +239,7 @@ function mostrarPortas()
 
 function mover(x, y, dir)
 {
+    document.querySelector('#fa-user'+posicao.y+''+posicao.x).classList.add('d-none');
     if(x == posicao.x && y == posicao.y) {
         ganhou();
     }
