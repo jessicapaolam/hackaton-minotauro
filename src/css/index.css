@@ -1,0 +1,61 @@
+body {
+    background-color: #181818;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* css portas */
+.porta-bordas {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d6d6d6;
+}
+
+div.porta-norte::after {
+    content: "";
+    transform: rotate(90deg);
+    position: absolute;
+    width: 3px;
+    height: 20%;
+    background: #b06837;
+    top: 1%;
+    left: 50px;
+}
+
+div.porta-sul::after {
+    content: "";
+    transform: rotate(270deg);
+    position: absolute;
+    width: 3px;
+    height: 20%;
+    background: #b06837;
+    top: 15%;
+    left: 50px;
+}
+
+div.porta-leste::after {
+    content: "";
+    transform: rotate(182deg);
+    position: absolute;
+    width: 3px;
+    height: 10%;
+    background: #b06837;
+    top: 13%;
+    left: 100px;
+}
+
+div.porta-oeste::after {
+    content: "";
+    transform: rotate(0deg);
+    position: absolute;
+    width: 3px;
+    height: 10%;
+    background: #b06837;
+    top: 13%;
+    left: 5px;
+}
