@@ -58,3 +58,7 @@ function dificuldade(num)
         $('#botaovisualizar').attr('disabled', 'disabled');
     }
 }
+
+function recarregar() {
+    location.reload();
+}

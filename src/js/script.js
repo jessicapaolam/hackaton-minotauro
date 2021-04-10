@@ -283,16 +283,7 @@ function mostrarPortas()
 
 function mover(x, y, dir)
 {
-    console.log('edigar', x, y);
-    console.log('minotauro', minotauro[0].x, minotauro[0].y);
     document.querySelector('#fa-user'+posicao.y+''+posicao.x).classList.add('d-none');
-    if(x == posicao.x && y == posicao.y) {
-        ganhou();
-    }
-
-    if(x == minotauro[0].x && y == minotauro[0].y) {
-        perdeu();
-    }
 
     let _x = x;
     let _y = y;
@@ -317,6 +308,15 @@ function mover(x, y, dir)
 
     posicao.x = posicao.x + _x;
     posicao.y = posicao.y + _y;
+    
+    if(posicao.x == destino.x && posicao.y == destino.y) {
+        ganhou();
+    }
+
+    if(posicao.x == minotauro[0].x && posicao.y == minotauro[0].y) {
+        console.log('perdeu');
+        perdeu();
+    }
     
     switch (dir)
     {
@@ -347,13 +347,21 @@ function mover(x, y, dir)
 
 function ganhou() {
     $('#botaovisualizar').attr('disabled', 'disabled');
-    document.querySelector('.minotauro').classList.remove('d-none-mensagem-perdeu');
-    document.querySelector('.container-mensagem-perdeu').classList.remove('d-none-mensagem-perdeu');
     document.querySelector('.container-mensagem-ganhou').classList.remove('d-none-mensagem-ganhou');
+    $('#up').attr('disabled', 'disabled');
+    $('#left').attr('disabled', 'disabled');
+    $('#right').attr('disabled', 'disabled');
+    $('#back').attr('disabled', 'disabled');
 }
 
 function perdeu() {
-    
+    $('#botaovisualizar').attr('disabled', 'disabled');
+    document.querySelector('.minotauro').classList.remove('d-none-mensagem-perdeu');
+    document.querySelector('.container-mensagem-perdeu').classList.remove('d-none-mensagem-perdeu');
+    $('#up').attr('disabled', 'disabled');
+    $('#left').attr('disabled', 'disabled');
+    $('#right').attr('disabled', 'disabled');
+    $('#back').attr('disabled', 'disabled');
 }
 
 onInit();
