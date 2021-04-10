@@ -45,9 +45,9 @@ div.porta-norte::after {
     content: "";
     transform: rotate(90deg);
     position: absolute;
-    width: 3px;
-    height: 20%;
-    background: #ff6c09;
+    width: 5px;
+    height: 10%;
+    background: #ff6700;
     top: 1%;
     left: 50px;
 }
