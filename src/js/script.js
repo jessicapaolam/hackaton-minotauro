@@ -1,7 +1,7 @@
 const labirinto = [];
 const inicio    = { x: null, y: null };
 const destino   = { x: null, y: null };
-const tamanho   = 10;
+const tamanho   = 5;
 const minotauro = [];
 
 function onInit()
