@@ -22,10 +22,13 @@
                 <button type="button" class="btn btn-light mb-2" onclick="mover(0, -1, 'N')"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
             </div>
             <div class="container-quarto">
-                <img src="./src/images/minotauro.png" class="minotauro">
-                <div class="container-mensagem">
+                <img src="./src/images/minotauro.png" class="minotauro d-none-mensagem-perdeu">
+                <div class="container-mensagem-perdeu d-none-mensagem-perdeu">
                     <h1>VOCÊ PERDEU!</h1>
                     <button type="button" class="btn btn-secondary">JOGAR NOVAMENTE</button>
+                </div>
+                <div class="container-mensagem-ganhou d-none-mensagem-ganhou">
+                    <h1>VOCÊ GANHOU!</h1>
                 </div>
                 <img src="./src/images/beco.png" id="fundo">                
             </div>

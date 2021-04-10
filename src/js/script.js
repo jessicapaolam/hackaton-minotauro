@@ -131,7 +131,7 @@ function salasBloqueadas()
         if (opcoes.length == 0) continue;
 
         const selecionado = opcoes[parseInt(Math.random() * opcoes.length)];
-        console.log('bloqueados', bloqueados[random], opcoes, selecionado);
+        // console.log('bloqueados', bloqueados[random], opcoes, selecionado);
         labirinto[bloqueados[random].x][bloqueados[random].y][selecionado] = true;
 
         switch (selecionado)
@@ -234,11 +234,13 @@ function mostrarPortas()
 
     document.getElementById('fundo').src = './src/images/' + imagem;
     
-    console.log(posicao, labirinto[posicao.x][posicao.y], direcao);
+    // console.log(posicao, labirinto[posicao.x][posicao.y], direcao);
 }
 
 function mover(x, y, dir)
 {
+    console.log('edigar', x, y);
+    console.log('minotauro', minotauro[0].x, minotauro[0].y);
     document.querySelector('#fa-user'+posicao.y+''+posicao.x).classList.add('d-none');
     if(x == posicao.x && y == posicao.y) {
         ganhou();
@@ -301,6 +303,9 @@ function mover(x, y, dir)
 
 function ganhou() {
     $('#botaovisualizar').attr('disabled', 'disabled');
+    document.querySelector('.minotauro').classList.remove('d-none-mensagem-perdeu');
+    document.querySelector('.container-mensagem-perdeu').classList.remove('d-none-mensagem-perdeu');
+    document.querySelector('.container-mensagem-ganhou').classList.remove('d-none-mensagem-ganhou');
 }
 
 function perdeu() {

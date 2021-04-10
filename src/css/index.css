@@ -18,7 +18,7 @@ body {
     border: 25px solid #10376e;
 }
 
-.container-mensagem {
+.container-mensagem-perdeu {
     z-index: 9999;
     position: absolute;
     left: 600px;
@@ -27,6 +27,25 @@ body {
     color: #f8f9fa;
     text-align: center;
     font-family: 'Montserrat', serif;
+}
+
+.container-mensagem-ganhou {
+    z-index: 9999;
+    position: absolute;
+    left: -20px;
+    right: 0;
+    margin-top: 140px;
+    color: #f8f9fa;
+    text-align: center;
+    font-family: 'Montserrat', serif;
+}
+
+.d-none-mensagem-ganhou {
+    display: none;
+}
+
+.d-none-mensagem-perdeu {
+    display: none;
 }
 
 .minotauro {
