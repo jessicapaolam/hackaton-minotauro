@@ -298,7 +298,7 @@ function mover(x, y, dir)
 }
 
 function ganhou() {
-
+    $('#botaovisualizar').attr('disabled', 'disabled');
 }
 
 function perdeu() {

@@ -14,6 +14,26 @@ body {
     justify-content: center;
 }
 
+.container-quarto {
+    border: 25px solid #10376e;
+}
+
+.container-mensagem {
+    z-index: 9999;
+    position: absolute;
+    left: 600px;
+    right: 0;
+    margin-top: 140px;
+    color: #f8f9fa;
+    text-align: center;
+    font-family: 'Montserrat', serif;
+}
+
+.minotauro {
+    z-index: 9999;
+    position: absolute;
+}
+
 .d-none {
     display: none;
 }
