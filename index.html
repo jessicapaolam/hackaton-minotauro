@@ -12,22 +12,31 @@
 <body>
 
     <div class="container">
-        <button type="button" class="btn btn-light" onclick="oeste()">Oeste</button>
+        <div class="container-btn" style="margin-right: 5px;">
+            <button type="button" class="btn btn-light" onclick="oeste()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+        </div>
         <div class="cube">
-            <button type="button" class="btn btn-light" onclick="norte()">Norte</button>
+            <div class="container-btn">
+                <button type="button" class="btn btn-light mb-2" onclick="norte()"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+            </div>
             <div><img src="./src/images/beco.png"></div>
             <div class="cube__face"></div>
             <div class="cube__face"></div>
             <div class="cube__face"></div>
             <div class="cube__face"></div>
             <div class="cube__face"></div>
-            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="abrirMapa(labirinto, posicao)">Abrir mapa</button>
-          </div>
-            <button type="button" class="btn btn-light"onclick="leste()">Leste</button>
+            <div class="container-btn mt-2">
+                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="abrirMapa()"><i class="fa fa-search" aria-hidden="true"></i> Visualizar mapa</button>
+                <button type="button" class="btn btn-light" onclick="voltar()" style="margin-left: 10px;"><i class="fa fa-undo" aria-hidden="true"></i> Voltar</button>
+            </div>
+        </div>
+        <div class="container-btn" style="margin-left: 5px;">
+            <button type="button" class="btn btn-light" onclick="leste()"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+        </div>
     </div>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">Mapa do Labirinto</h5>
@@ -40,6 +49,7 @@
                         <div></div>
                     </div>
                     <div class="col porta-bordas">
+                        <i class="fa fa-simplybuilt" aria-hidden="true"></i>
                         &nbsp;
                     </div>
                     <div class="col porta-bordas">

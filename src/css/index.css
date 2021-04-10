@@ -9,11 +9,28 @@ body {
     height: 100vh;
 }
 
+.container-btn {
+    display: flex;
+    justify-content: center;
+}
+
 /* css portas */
 .porta-bordas {
     border-style: solid;
     border-width: 1px;
-    border-color: #d6d6d6;
+    border-color: #181818;
+}
+
+div.porta-bordas i {
+    margin-left: 25px;
+}
+
+.fa-user {
+    color: #45dd98;
+}
+
+.fa-simplybuilt {
+    color: #cf0202;
 }
 
 div.porta-norte::after {
@@ -22,7 +39,7 @@ div.porta-norte::after {
     position: absolute;
     width: 3px;
     height: 20%;
-    background: #b06837;
+    background: #ff6c09;
     top: 1%;
     left: 50px;
 }
@@ -33,7 +50,7 @@ div.porta-sul::after {
     position: absolute;
     width: 3px;
     height: 20%;
-    background: #b06837;
+    background: #ff6c09;
     top: 15%;
     left: 50px;
 }
@@ -44,7 +61,7 @@ div.porta-leste::after {
     position: absolute;
     width: 3px;
     height: 10%;
-    background: #b06837;
+    background: #ff6c09;
     top: 13%;
     left: 100px;
 }
@@ -55,7 +72,7 @@ div.porta-oeste::after {
     position: absolute;
     width: 3px;
     height: 10%;
-    background: #b06837;
+    background:#ff6c09;
     top: 13%;
     left: 5px;
 }
