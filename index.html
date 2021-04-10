@@ -13,11 +13,11 @@
 
     <div class="container">
         <div class="container-btn" style="margin-right: 5px;">
-            <button type="button" class="btn btn-light" onclick="oeste()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+            <button type="button" class="btn btn-light" onclick="mover(-1, 0, 'L')"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
         </div>
         <div class="cube">
             <div class="container-btn">
-                <button type="button" class="btn btn-light mb-2" onclick="norte()"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-light mb-2" onclick="mover(0, -1, 'N')"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
             </div>
             <div><img src="./src/images/beco.png"></div>
             <div class="cube__face"></div>
@@ -26,12 +26,12 @@
             <div class="cube__face"></div>
             <div class="cube__face"></div>
             <div class="container-btn mt-2">
-                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="abrirMapa()"><i class="fa fa-search" aria-hidden="true"></i> Visualizar mapa</button>
-                <button type="button" class="btn btn-light" onclick="voltar()" style="margin-left: 10px;"><i class="fa fa-undo" aria-hidden="true"></i> Voltar</button>
+                <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="abrirMapa(labirinto, posicao, minotauro)"><i class="fa fa-search" aria-hidden="true"></i> Visualizar mapa</button>
+                <button type="button" class="btn btn-light" onclick="mover(0, 1, 'S')" style="margin-left: 10px;"><i class="fa fa-undo" aria-hidden="true"></i> Voltar</button>
             </div>
         </div>
         <div class="container-btn" style="margin-left: 5px;">
-            <button type="button" class="btn btn-light" onclick="leste()"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+            <button type="button" class="btn btn-light" onclick="mover(1, 0, 'R')"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
         </div>
     </div>
 
@@ -45,89 +45,137 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col porta-bordas porta-sul porta-norte porta-oeste">
-                        <i class="fa fa-user" aria-hidden="true" id="fa-user" style="display: none"></i>                            
-                        <div></div>
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user00"></i>
+                        <div class="d-show" id="room00">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro00"></i>
                     </div>
                     <div class="col porta-bordas">
-                        <i class="fa fa-simplybuilt" aria-hidden="true"></i>
-                        &nbsp;
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user01"></i>
+                        <div class="d-show" id="room01">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro01"></i>
                     </div>
                     <div class="col porta-bordas">
-                        &nbsp;
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user02"></i>
+                        <div class="d-show" id="room02">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro02"></i>
                     </div>
                     <div class="col porta-bordas">
-                        &nbsp;
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user03"></i>
+                        <div class="d-show" id="room03">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro03"></i>
                     </div>
                     <div class="col porta-bordas">
-                        &nbsp;
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col porta-bordas">
-                        &nbsp;
-                    </div>
-                    <div class="col porta-bordas">
-                        &nbsp;
-                    </div>
-                    <div class="col porta-bordas">
-                        &nbsp;
-                    </div>
-                    <div class="col porta-bordas">
-                        &nbsp;
-                    </div>
-                    <div class="col porta-bordas">
-                        
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user04"></i>
+                        <div class="d-show" id="room04">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro04"></i>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col porta-bordas">
-                        &nbsp;
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user10"></i>
+                        <div class="d-show" id="room10">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro10"></i>
                     </div>
                     <div class="col porta-bordas">
-                        &nbsp;
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user11"></i>
+                        <div class="d-show" id="room11">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro11"></i>
                     </div>
                     <div class="col porta-bordas">
-                        &nbsp;
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user12"></i>
+                        <div class="d-show" id="room12">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro12"></i>
                     </div>
                     <div class="col porta-bordas">
-                        &nbsp;
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user13"></i>
+                        <div class="d-show" id="room13">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro13"></i>
                     </div>
                     <div class="col porta-bordas">
-                        &nbsp;
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col porta-bordas">
-                        &nbsp;
-                    </div>
-                    <div class="col porta-bordas">
-                        &nbsp;
-                    </div>
-                    <div class="col porta-bordas">
-                        &nbsp;
-                    </div>
-                    <div class="col porta-bordas">
-                        &nbsp;
-                    </div>
-                    <div class="col porta-bordas">
-                        &nbsp;
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user14"></i>
+                        <div class="d-show" id="room14">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro14"></i>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col porta-bordas">
-                        &nbsp;
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user20"></i>
+                        <div class="d-show" id="room20">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro20"></i>
                     </div>
                     <div class="col porta-bordas">
-                        &nbsp;
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user21"></i>
+                        <div class="d-show" id="room21">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro21"></i>
                     </div>
                     <div class="col porta-bordas">
-                        &nbsp;
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user22"></i>
+                        <div class="d-show" id="room22">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro22"></i>
                     </div>
                     <div class="col porta-bordas">
-                        &nbsp;
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user23"></i>
+                        <div class="d-show" id="room23">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro23"></i>
                     </div>
                     <div class="col porta-bordas">
-                        &nbsp;
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user24"></i>
+                        <div class="d-show" id="room24">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro24"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col porta-bordas">
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user30"></i>
+                        <div class="d-show" id="room30">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro30"></i>
+                    </div>
+                    <div class="col porta-bordas">
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user31"></i>
+                        <div class="d-show" id="room31">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro31"></i>
+                    </div>
+                    <div class="col porta-bordas">
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user32"></i>
+                        <div class="d-show" id="room32">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro32"></i>
+                    </div>
+                    <div class="col porta-bordas">
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user33"></i>
+                        <div class="d-show" id="room33">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro33"></i>
+                    </div>
+                    <div class="col porta-bordas">
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user34"></i>
+                        <div class="d-show" id="room34">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro34"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col porta-bordas">
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user40"></i>
+                        <div class="d-show" id="room40">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro40"></i>
+                    </div>
+                    <div class="col porta-bordas">
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user41"></i>
+                        <div class="d-show" id="room41">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro41"></i>
+                    </div>
+                    <div class="col porta-bordas">
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user42"></i>
+                        <div class="d-show" id="room42">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro42"></i>
+                    </div>
+                    <div class="col porta-bordas">
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user43"></i>
+                        <div class="d-show" id="room43">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro43"></i>
+                    </div>
+                    <div class="col porta-bordas">
+                        <i class="fa fa-user d-none" aria-hidden="true" id="fa-user44s"></i>
+                        <div class="d-show" id="room44">&nbsp;</div>
+                        <i class="fa fa-simplybuilt d-none" aria-hidden="true" id="fa-minotauro44"></i>
                     </div>
                 </div>
             </div>
