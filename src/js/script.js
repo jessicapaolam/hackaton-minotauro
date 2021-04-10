@@ -309,15 +309,6 @@ function mover(x, y, dir)
     posicao.x = posicao.x + _x;
     posicao.y = posicao.y + _y;
     
-    if(posicao.x == destino.x && posicao.y == destino.y) {
-        ganhou();
-    }
-
-    if(posicao.x == minotauro[0].x && posicao.y == minotauro[0].y) {
-        console.log('perdeu');
-        perdeu();
-    }
-    
     switch (dir)
     {
         case 'N':
@@ -343,6 +334,14 @@ function mover(x, y, dir)
     }
 
     mostrarPortas();
+
+    if(posicao.x == destino.x && posicao.y == destino.y) {
+        ganhou();
+    }
+
+    if(posicao.x == minotauro[0].x && posicao.y == minotauro[0].y) {
+        perdeu();
+    }
 }
 
 function ganhou() {
