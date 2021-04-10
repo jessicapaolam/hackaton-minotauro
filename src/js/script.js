@@ -238,6 +238,14 @@ function mostrarPortas()
 
 function mover(x, y, dir)
 {
+    if(x == posicao.x && y == posicao.y) {
+        ganhou();
+    }
+
+    if(x == minotauro[0].x && y == minotauro[0].y) {
+        perdeu();
+    }
+
     let _x = x;
     let _y = y;
     switch (direcao)
@@ -287,6 +295,14 @@ function mover(x, y, dir)
     }
 
     mostrarPortas();
+}
+
+function ganhou() {
+
+}
+
+function perdeu() {
+    
 }
 
 onInit();
