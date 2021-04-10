@@ -1,9 +1,4 @@
 function abrirMapa(labirinto, tamanho, posicao, minotauro, destino) {
-    console.log(labirinto);   
-    console.log(tamanho); 
-    console.log(posicao);
-    console.log(minotauro[0]);
-    console.log(destino);
     document.querySelector('#fa-user' + posicao.y + posicao.x).classList.remove('d-none');
     document.querySelector('#fa-minotauro' + minotauro[0].y + minotauro[0].x).classList.remove('d-none');
     document.querySelector('#fa-chegada' + destino.y + destino.x).classList.remove('d-none');
