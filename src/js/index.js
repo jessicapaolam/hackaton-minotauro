@@ -17,19 +17,19 @@ function abrirMapa(labirinto, tamanho, posicao, minotauro, destino) {
     for(let i = 0; i < tamanho; i++) {
         for(let j = 0; j < tamanho; j++) {
             if (labirinto[i][j].left) {
-                document.querySelector('#border' + i + j).style.borderLeft = '3px solid red';
+                document.querySelector('#border' + j + i).style.borderLeft = '3px solid red';
             }
             
             if (labirinto[i][j].right) {
-                document.querySelector('#border' + i + j).style.borderRight = '3px solid red';
+                document.querySelector('#border' + j + i).style.borderRight = '3px solid red';
             }
 
             if(labirinto[i][j].bottom) {
-                document.querySelector('#border' + i + j).style.borderBottom = '3px solid red';
+                document.querySelector('#border' + j + i).style.borderBottom = '3px solid red';
             }
 
             if(labirinto[i][j].top) {
-                document.querySelector('#border' + i + j).style.borderTop = '3px solid red';
+                document.querySelector('#border' + j + i).style.borderTop = '3px solid red';
             }
 
             //console.log('dentro do for', labirinto[i][j]);
