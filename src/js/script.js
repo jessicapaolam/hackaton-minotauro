@@ -238,6 +238,7 @@ function mostrarPortas()
 
 function mover(x, y, dir)
 {
+    document.querySelector('#fa-user'+posicao.y+''+posicao.x).classList.add('d-none');
     if(x == posicao.x && y == posicao.y) {
         ganhou();
     }
