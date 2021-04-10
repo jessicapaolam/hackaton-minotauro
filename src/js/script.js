@@ -226,6 +226,50 @@ function mostrarPortas()
                 imagem += 'right';
             break;
     }
+    
+    switch (imagem)
+    {
+        case 'beco':
+            $('#up').attr('disabled', 'disabled');
+            $('#left').attr('disabled', 'disabled');
+            $('#right').attr('disabled', 'disabled');
+            break;
+        case 'left':
+            $('#up').attr('disabled', 'disabled');
+            $('#left').removeAttr('disabled');
+            $('#right').attr('disabled', 'disabled');
+            break;
+        case 'lefttop':
+            $('#up').removeAttr('disabled');
+            $('#left').removeAttr('disabled');
+            $('#right').attr('disabled', 'disabled');
+            break;
+        case 'leftright':
+            $('#up').attr('disabled', 'disabled');
+            $('#left').removeAttr('disabled');
+            $('#right').removeAttr('disabled');
+            break;
+        case 'lefttopright':
+            $('#up').removeAttr('disabled');
+            $('#left').removeAttr('disabled');
+            $('#right').removeAttr('disabled');
+            break;
+        case 'top':
+            $('#up').removeAttr('disabled');
+            $('#left').attr('disabled', 'disabled');
+            $('#right').attr('disabled', 'disabled');
+            break;
+        case 'topright':
+            $('#up').removeAttr('disabled');
+            $('#left').attr('disabled', 'disabled');
+            $('#right').removeAttr('disabled');
+            break;
+        case 'right':
+            $('#up').attr('disabled', 'disabled');
+            $('#left').attr('disabled', 'disabled');
+            $('#right').removeAttr('disabled');
+            break;
+    }
 
     if (imagem == '')
         imagem = 'beco';
