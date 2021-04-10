@@ -15,11 +15,11 @@
 
     <div class="container">
         <div class="container-btn" style="margin-right: 5px;">
-            <button type="button" class="btn btn-light" onclick="mover(-1, 0, 'L')"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+            <button id="left" type="button" class="btn btn-light" onclick="mover(-1, 0, 'L')"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
         </div>
         <div class="cube">
             <div class="container-btn">
-                <button type="button" class="btn btn-light mb-2" onclick="mover(0, -1, 'N')"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+                <button id="up" type="button" class="btn btn-light mb-2" onclick="mover(0, -1, 'N')"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
             </div>
             <div class="container-quarto">
                 <img src="./src/images/minotauro.png" class="minotauro d-none-mensagem-perdeu">
@@ -39,11 +39,11 @@
             <div class="cube__face"></div>
             <div class="container-btn mt-2">
                 <button id="botaovisualizar" type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="abrirMapa(labirinto, tamanho, posicao, minotauro, destino)"><i class="fa fa-search" aria-hidden="true"></i> Visualizar mapa</button>
-                <button type="button" class="btn btn-light" onclick="mover(0, 1, 'S')" style="margin-left: 10px;"><i class="fa fa-undo" aria-hidden="true"></i> Voltar</button>
+                <button id="back" type="button" class="btn btn-light" onclick="mover(0, 1, 'S')" style="margin-left: 10px;"><i class="fa fa-undo" aria-hidden="true"></i> Voltar</button>
             </div>
         </div>
         <div class="container-btn" style="margin-left: 5px;">
-            <button type="button" class="btn btn-light" onclick="mover(1, 0, 'R')"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+            <button id="right" type="button" class="btn btn-light" onclick="mover(1, 0, 'R')"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
         </div>
     </div>
 
