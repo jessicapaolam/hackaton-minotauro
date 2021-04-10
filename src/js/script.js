@@ -1,7 +1,7 @@
 const labirinto = [];
 const inicio    = { x: null, y: null };
 const destino   = { x: null, y: null };
-const tamanho   = 5;
+const tamanho   = 10;
 const minotauro = [];
 
 function onInit()
@@ -149,8 +149,6 @@ function salasBloqueadas()
 
         if(bloqueados.length == 0) flag = true;
     }
-
-    console.log(labirinto);
 }
 
 function checkSala(x, y)
@@ -235,21 +233,61 @@ function mostrarPortas()
 
     document.getElementById('fundo').src = './src/images/' + imagem;
     
-    console.log(posicao, labirinto[inicio.x][inicio.y]);
+    console.log(posicao, labirinto[posicao.x][posicao.y], direcao);
 }
 
-function mover(x, y)
+function mover(x, y, dir)
 {
-    console.log(x, y);
-    if (x < 0 || x >= tamanho || y < 0 || y >= tamanho)
+    let _x = x;
+    let _y = y;
+    switch (direcao)
+    {
+        case 'S':
+            _x = x * (-1);
+            _y = y * (-1);
+            break;
+        case 'L':
+            _x = y;
+            _y = x * (-1);
+            break;
+        case 'R':
+            _x = y * (-1);
+            _y = x;
+            break;
+    }
+
+    if ((posicao.x + _x) < 0 || (posicao.x + _x) >= tamanho || (posicao.y + _y) < 0 || (posicao.y + _y) >= tamanho)
         return;
 
-    posicao.x = posicao.x + x;
-    posicao.y = posicao.y + y;
+    posicao.x = posicao.x + _x;
+    posicao.y = posicao.y + _y;
+    
+    switch (dir)
+    {
+        case 'N':
+            break;
+        case 'S':
+            if (direcao == 'L') direcao = 'R';
+            else if (direcao == 'R') direcao = 'L';
+            else if (direcao == 'S') direcao = 'N';
+            else if (direcao == 'N') direcao = 'S';
+            break;
+        case 'L':
+            if (direcao == 'L') direcao = 'S';
+            else if (direcao == 'R') direcao = 'N';
+            else if (direcao == 'S') direcao = 'R';
+            else if (direcao == 'N') direcao = 'L';
+            break;
+        case 'R':
+            if (direcao == 'L') direcao = 'N';
+            else if (direcao == 'R') direcao = 'S';
+            else if (direcao == 'S') direcao = 'L';
+            else if (direcao == 'N') direcao = 'R';
+            break;
+    }
 
     mostrarPortas();
 }
-
 
 onInit();
 start();
