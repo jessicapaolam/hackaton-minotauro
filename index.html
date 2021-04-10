@@ -21,7 +21,7 @@
             <div class="cube__face"></div>
             <div class="cube__face"></div>
             <div class="cube__face"></div>
-            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="abrirMapa()">Abrir mapa</button>
+            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="abrirMapa(labirinto, posicao)">Abrir mapa</button>
           </div>
             <button type="button" class="btn btn-light"onclick="leste()">Leste</button>
     </div>
@@ -36,8 +36,8 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col porta-bordas porta-sul porta-norte porta-oeste">
-                        <i class="fa fa-user" aria-hidden="true"></i>                            
-                        &nbsp;
+                        <i class="fa fa-user" aria-hidden="true" id="fa-user" style="display: none"></i>                            
+                        <div></div>
                     </div>
                     <div class="col porta-bordas">
                         &nbsp;
@@ -128,6 +128,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    <script src="./src/js/script.js"></script>
     <script src="./src/js/index.js"></script>
 </body>
 </html>
